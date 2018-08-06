@@ -1,0 +1,20 @@
+
+{
+  "apps": [
+    {
+      "name": "scraper",
+      "script": "index.js",
+      "instances": 4,
+      "exec_mode": "cluster",
+      "env": {
+        "DISPLAY": ":95"
+      }
+    },
+    {
+      "name": "Xvfb",
+      "interpreter": "none",
+      "script": "Xvfb",
+      "args": ":95"
+    }
+  ]
+}
