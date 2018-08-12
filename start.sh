@@ -1,7 +1,6 @@
 #!/bin/sh
 
-NAME='scraper'
-SHARED='/shared'
+export $(grep -v '^#' .env | xargs)
 
 # build the docker
 sudo docker build -t $NAME . 
