@@ -36,11 +36,13 @@ const runner = async search => {
       [...document.querySelectorAll("a.result__a")].map(e=>e.textContent.trim())
     );
     
+    await page.screenshot({ path: `/shared/sample_${Date.now()}.png` });
+
     console.log("Extracted data, cleaning up");
     await cleanup();
   } catch (e) {
     console.log("Cannot extract data", e);
-    await page.screenshot({ path: `error_${Date.now()}.png` });
+    await page.screenshot({ path: `/shared/error_${Date.now()}.png` });
     await cleanup();
   }
   return data;

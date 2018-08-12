@@ -25,4 +25,4 @@ COPY . /app
 ENTRYPOINT ["dumb-init", "--"]
 
 # Start script on Xvfb
-CMD xvfb-run node app/index.js
+CMD ["xvfb-run","node","app/index.js"]

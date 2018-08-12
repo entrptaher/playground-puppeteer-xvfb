@@ -1,6 +1,7 @@
 #!/bin/sh
 
-NAME='scraper2'
+NAME='scraper'
+SHARED='/shared'
 
 # build the docker
 sudo docker build -t $NAME . 
@@ -13,7 +14,7 @@ sudo docker build -t $NAME .
 
 # start the container, expose to network and remove on successful run, 
 # also if you exit terminal, it will stop and remove container
-docker run --network=host --rm -it $NAME
+docker run --network=host --rm -v $PWD$SHARED:$SHARED -it $NAME
 
 # starts the container, expose to network
 # runs on background as daemon, won't show anything on terminal
