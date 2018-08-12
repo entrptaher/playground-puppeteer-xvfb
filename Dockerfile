@@ -1,8 +1,5 @@
 FROM node:8
 
-# Install process manager
-RUN npm install -g pm2
-
 # Install dependencies
 RUN apt-get update &&\
 apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
