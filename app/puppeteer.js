@@ -23,19 +23,24 @@ const runner = async search => {
   try {
     console.log("Navigating url");
     await page.goto("https://duckduckgo.com/", { waitUntil: "networkidle2" });
+
     console.log("Typing text");
     await page.type("input#search_form_input_homepage", search, { delay: 50 });
+    
+    console.log("Confirm Search");
     await page.click("input#search_button_homepage");
+
     console.log("Wait for results");
     await page.waitForSelector(".results--main #r1-0");
     data = await page.evaluate(() =>
       [...document.querySelectorAll("a.result__a")].map(e=>e.textContent.trim())
     );
-    console.log("Extracted data");
+    
+    console.log("Extracted data, cleaning up");
     await cleanup();
   } catch (e) {
-    console.log("Error happened", e);
-    await page.screenshot({ path: "error.png" });
+    console.log("Cannot extract data", e);
+    await page.screenshot({ path: `error_${Date.now()}.png` });
     await cleanup();
   }
   return data;

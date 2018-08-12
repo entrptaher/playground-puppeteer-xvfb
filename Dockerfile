@@ -27,4 +27,4 @@ COPY . /app
 EXPOSE 80:3000
 
 # Start script on Xvfb
-CMD pm2 start process.json && pm2 logs
+CMD xvfb-run node app/index.js
