@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME='scraper'
+NAME='scraper2'
 
 # build the docker
 sudo docker build -t $NAME . 
