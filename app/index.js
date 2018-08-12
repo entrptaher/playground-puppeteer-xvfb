@@ -4,5 +4,4 @@ const runner = require("./puppeteer");
   const data = await runner(search);
   console.log(`Ended At: ${Date.now()}`);
   console.log(data);
-  process.exit(1);
 })('github');
