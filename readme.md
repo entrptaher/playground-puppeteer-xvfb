@@ -1,4 +1,6 @@
 # Overview
+This version targets a direct nodeJS script rather than with a process manager. It avoids the ram usage overhead added by PM2 manager. Also it's a direct script without any API just for examples purpose. 
+
 Assuming we are going to use digitalocean for hosting, we will install a one click app, it should be either Docker or NodeJS. That way we don't have to worry about installing them manually. 
 
 Make sure you have docker installed and running, after that, we have a docker file `Dockerfile` which we can use to deploy our app anywhere. The docker file is commented out with proper code, you can read it to know what is happenening behind the scene. 
@@ -20,17 +22,7 @@ If you want to know how to install docker or nodejs manually, here are some guid
 
 So the instructions right now are pretty straightforward,
 - Clone the repo, or upload it to server.
-  - Run `Dockerfile` which will do the rest of the work.
-  - OR, Run everything manually with nodejs and pm2
-
-## PM2 Process Manager
-- Install nodejs from above guide, 
-- Check the dockerfile and install the dependencies with apt-get commands.
-- Install pm2 which will take care of concurrency and fallback problems. It will run Xvfb for you, with a fake display, so headless:false can be run perfectly. There are some dependencies needed, check the dockerfile for those.
-
-- You can install it using `npm i -g pm2`, 
-- Install all node dependencies `npm install`,
-- and then run with `pm2 start process.json` on this folder.
+- Run `Dockerfile` which will do the rest of the work.
 
 ## Running the docker
 
