@@ -1,3 +1,5 @@
+PS: Check https://github.com/entrptaher/puppeteer-xvfb/tree/direct-script For running script directly instead of PM2 and/or Docker.
+
 # Overview
 Assuming we are going to use digitalocean for hosting, we will install a one click app, it should be either Docker or NodeJS. That way we don't have to worry about installing them manually. 
 
