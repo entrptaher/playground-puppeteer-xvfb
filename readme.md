@@ -23,6 +23,18 @@ If you want to know how to install docker or nodejs manually, here are some guid
 So the instructions right now are pretty straightforward,
 - Clone the repo, or upload it to server.
 - Run `Dockerfile` which will do the rest of the work.
+- Or, run `index.js` manually
+
+## The trick to run puppeteer on server
+- First is xvfb, since server doesn't have any display. xvfb will create a fake display for us and we can run `headless: false` even on server.
+- Second is to use `no-sandbox` and `disable-setuid-sandbox` arguments, which makes sure it runs as root if needed.
+
+## Running script manually
+- Make sure to install all dependencies listed here, https://github.com/entrptaher/puppeteer-xvfb/blob/direct-script/Dockerfile#L5
+- Run `npm install`
+- Run `xvfb-run npm start`
+
+That's all. It will start running the server. It will close once you close your terminal.
 
 ## Running the docker
 
